@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>水印效果</title>
+    <style>
+      body {
+        position: relative;
+        margin: 0;
+        padding-top: 0.1px;
+        height: 100vh;
+      }
+      .watermark {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('./watermark.png') repeat;
+        /* 水印核心代码 */
+        pointer-events: none;
+        /* 打印配置 —— 元素的背景色和图像始终会被打印 */
+        -webkit-print-color-adjust: exact;
+        opacity: 0.1;
+      }
+      .btn {
+        margin: 100px auto;
+        width: 800px;
+        height: 160px;
+        background: #4d61d1;
+        border-radius: 20px;
+        font-size: 100px;
+        line-height: 160px;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+        /* -webkit-print-color-adjust: exact; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="watermark"></div>
+    <div class="btn">Hello World</div>
+    <script>
+      const btn = document.querySelector('.btn');
+      btn.addEventListener('click', () => {
+        alert("I'm back!");
+      })
+    </script>
+  </body>
+</html>
