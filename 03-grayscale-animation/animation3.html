@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grayscale Animation</title>
+  <style>
+    body {
+      margin: 10px;
+    }
+    .mask {
+      vertical-align: top;
+      filter: grayscale(100%);
+      transition: all 3s linear;
+    }
+    .animation {
+      filter: grayscale(0);
+    }
+  </style>
+</head>
+<body>
+  <h2>filter 版本</h2>
+  <div class="container">
+    <img class="mask" src="./cai.jpeg" alt="" width="100%" />
+  </div>
+  <script>
+    var mask = document.querySelector('.mask');
+    mask.addEventListener('click', function () {
+      if (!this.className.includes(' animation')) {
+        this.className += ' animation';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grayscale Animation</title>
+  <style>
+    body {
+      margin: 10px;
+    }
+    .container {
+      background: url(./cai.jpeg);
+      background-size: 100% 100%;
+    }
+    .mask {
+      vertical-align: top;
+    }
+    .animation {
+      animation: gray 3s 1 forwards;
+    }
+    @keyframes gray {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>animation 版本</h2>
+  <div class="container">
+    <img class="mask" src="./hui.jpeg" alt="" width="100%" />
+  </div>
+  <script>
+    var mask = document.querySelector('.mask');
+    mask.addEventListener('click', function () {
+      if (!this.className.includes(' animation')) {
+        this.className += ' animation';
+      }
+    });
+  </script>
+</body>
+</html>

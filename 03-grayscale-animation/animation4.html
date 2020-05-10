@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grayscale Animation</title>
+    <style>
+      body {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>svg animate 版本</h2>
+    <section
+      data-width="100%"
+      style="
+        display: inline-block;
+        width: 100%;
+        font-size: 0px;
+        background-image: url('./hui.jpeg');
+        background-position: 0% 0%;
+        background-size: cover;
+        vertical-align: top;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        box-sizing: border-box;
+        max-width: 100% !important;
+      "
+    >
+      <svg
+        data-width="100%"
+        enable-background="new 0 0 2000 3000"
+        space="preserve"
+        style="
+          display: inline-block;
+          outline: none;
+          opacity: 0;
+          width: 100%;
+          margin-top: -1px;
+          border-width: initial;
+          border-style: none;
+          border-color: initial;
+          vertical-align: top;
+          background-position: 0% 0%;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          background-attachment: scroll;
+          background-image: url('./cai.jpeg');
+          -webkit-tap-highlight-color: transparent;
+        "
+        version="1.1"
+        viewBox="0 0 3000 2000"
+        x="0px"
+        xlink="http://www.w3.org/1999/xlink"
+        xml=""
+        xmlns="http://www.w3.org/2000/svg"
+        y="0px"
+      >
+        <animate attributeName="opacity" from="0" to="1" begin="click" dur="3s" fill="freeze" restart="never"></animate>
+      </svg>
+    </section>
+  </body>
+</html>
