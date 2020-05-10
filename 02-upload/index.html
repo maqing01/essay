@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload File</title>
+  </head>
+  <body>
+    <input id="file" type="file" accept="image/*" />
+    <script>
+      function uploadFile() {
+        const fd = new FormData();
+        const fileElem = document.querySelector('#file');
+        if(!fileElem.files[0]) { return; }
+        console.log(fileElem.files[0])
+        fd.append('file', fileElem.files[0]);
+        fetch('/api/file/upload', {
+          method: 'POST',
+          body: fd,
+        })
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result);
+          });
+      }
+      document.querySelector('#file').addEventListener('change', uploadFile);
+    </script>
+  </body>
+</html>

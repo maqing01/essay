@@ -1,0 +1,11 @@
+{
+  "name": "upload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "hs -P https://proxy.server"
+  },
+  "author": "",
+  "license": "ISC"
+}
